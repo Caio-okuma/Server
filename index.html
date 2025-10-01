@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Comidas famosas do Brasil</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset='UTF-8'>
+    <title>Comidas</title>
+    <link rel='stylesheet' href='../css/estilo.css'>
 </head>
+
 <body class="conteudo">
-    <h1>Comidas famosas do Brasil</h1>
     <nav>
-        <a href wm-link="comidas.html" wm-destino=".pagina">comidas</a>|
-        <a href wm-link="locais.html" wm-destino=".pagina">locais</a>
+        <h1 class="title">Comidas tipicas do Brasil</h1>
+        <div class="nav-links">
+            <a href wm-link="comida.html" wm-destino=".pagina">Comida</a> |
+            <a href wm-link="locais.html" wm-destino=".pagina">Locais</a>
+        </div>
     </nav>
     <div class="pagina"></div>
 
@@ -28,8 +31,8 @@
         }
 
         document.querySelectorAll('[wm-link]').forEach(link => {
-            const url = link.getAttribute('wm-link')
-            const seletorDestino = link.getAttribute('wm-destino')
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
 
             link.onclick = e => {
                 e.preventDefault()
@@ -45,3 +48,31 @@
     </script>
 </body>
 </html>
+
+<style>
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #f0f8ff; /* subtle background */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* title left, links right */
+    font-size: 2em;
+    padding: 0 20px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    padding: 0 10px;
+}
+
+</style>
